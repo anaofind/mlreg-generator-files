@@ -20,7 +20,7 @@ public class MLRegGenerator {
 	
 	
 	
-	public void generate(String pathFile) {
+	public void generate(String dir) {
 		for (String l : targetLanguages) {
 			int num = 0;
 			for (String eval : evaluations) {
@@ -29,8 +29,12 @@ public class MLRegGenerator {
 						num++;
 						MLRegProg prog = new MLRegProg(datas, colsPred, colsTarg, l, eval, algo, cal);
 						String code = prog.getCode();
-						Path filePath = Path.of(pathFile, this.getFileName(l, num));
+						Path dirPath = Path.of(dir);
+						Path filePath = Path.of(dir, this.getFileName(l, num));
 						try {
+							if (! Files.exists(dirPath)) {
+								Files.createDirectories(dirPath);
+							}
 							if (! Files.exists(filePath)) {
 								Files.createFile(filePath);	
 							}

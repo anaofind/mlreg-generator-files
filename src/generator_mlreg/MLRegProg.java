@@ -53,9 +53,9 @@ public class MLRegProg {
 		String codeCols = "";
 		if (cols.size() > 0) {
 			for (String col : cols) {
-				codeCols += ",\"" + col + "\"";
+				codeCols += "\"" + col + "\",";
 			}
-			return codeCols.substring(0);
+			return codeCols.substring(0, codeCols.length() - 1);
 		}
 		
 		return "";
