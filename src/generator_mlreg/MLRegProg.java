@@ -40,7 +40,7 @@ public class MLRegProg {
 	
 	private void generate() {
 		this.linesCode.add("target_language : " + this.targetLanguage);
-		this.linesCode.add("import : \"" + this.datas + "\"");
+		this.linesCode.add("import \"" + this.datas + "\"");
 		this.linesCode.add("predictive_vars : " + this.getCodeCols(this.colsPred));
 		this.linesCode.add("target_vars : " + this.getCodeCols(this.colsTarg));
 		this.linesCode.add(this.evaluation);
