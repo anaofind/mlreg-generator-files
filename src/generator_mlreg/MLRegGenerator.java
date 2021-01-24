@@ -13,10 +13,10 @@ public class MLRegGenerator {
 	private static List<String> calculs = List.of("mean_squared_error", "mean_absolute_error", "median_absolute_error");
 	
 	
-	private String datas = "soccer.csv";
+	private String datas = "../datas/soccer.csv";
 	
-	private List<String> colsPred = List.of("odds_ft_draw", "odds_ft_away_team_win");
-	private List<String> colsTarg = List.of("odds_ft_home_team_win");
+	private List<String> colsPred = List.of("B365D", "B365A");
+	private List<String> colsTarg = List.of("B365H");
 	
 	
 	
